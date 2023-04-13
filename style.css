@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+	--bg-black-900: rgb(219, 219, 219);
+	--bg-black-100: rgb(240, 240, 240);
+	--bg-black-50: rgb(189, 189, 189);
+	--text-black-900: rgb(17, 17, 17);
+	--text-black-700: rgb(131, 28, 28);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body.dark {
+	--bg-black-900: rgb(54, 54, 54);
+	--bg-black-100: rgb(27, 27, 27);
+	--bg-black-50: rgb(196, 196, 196);
+	--text-black-900: rgb(136, 136, 136);
+	--text-black-700: rgb(212, 212, 212);
+}
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	font-size: 16px;
+	font-family: 'Poppins' sans-serif;
+}
+
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+section {
+	background: var(--bg-black-900);
+	min-height: 100vh;
+	display: block;
+	padding: 0 30px;
+	opacity: 1;
+	position: fixed;
+	left: 270px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all 0.3s ease;
+}
+
+section.aktywny {
+	z-index: 2;
+	opacity: 1;
+	animation: slideSection 1s ease;
+}
+
+@keyframes slideSection {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+section.powrot {
+	z-index: 1;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.paddingi15 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.blok {
+	max-width: 1100px;
+	width: 100%;
+	margin: auto;
+}
+
+section .blok {
+	padding-top: 60px;
+	padding-bottom: 70px;
+}
+
+.naglowek-sekcji {
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 60px;
+}
+
+.naglowek-sekcji h2 {
+	font-size: 40px;
+	color: var(--text-black-900);
+	font-weight: 700;
+	position: relative;
+}
+
+.naglowek-sekcji h2::before {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 60px;
+	background-color: var(--skin-color);
+	top: 100%;
+	left: 0;
+}
+
+.naglowek-sekcji h2::after {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 30px;
+	background-color: var(--skin-color);
+	top: 100%;
+	left: 0;
+	margin-top: 8px;
+}
+
+.tekst {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+	position: relative;
+}
+
+.btn {
+	font-size: 16px;
+	font-weight: 700;
+	padding: 12px 35px;
+	color: whitesmoke;
+	border-radius: 40px;
+	display: inline-block;
+	white-space: nowrap;
+	border: none;
+	background: var(--skin-color);
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	transform: scale(1.05);
+}
+
+.cień-ciemny {
+	box-shadow: 0 0 20px black;
+}
+
+/* Pierwsza */
+
+.pierwsza {
+	width: 270px;
+	background: var(--bg-black-100);
+	position: fixed;
+	left: 0;
+	padding: 30px;
+	top: 0;
+	height: 100%;
+	border-right: 1px solid var(--bg-black-50);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	transition: all 0.3s ease;
+}
+
+.pierwsza .logo {
+	position: absolute;
+	top: 50px;
+	font-size: 30px;
+	text-transform: capitalize;
+}
+
+.pierwsza .logo a {
+	color: var(--text-black-900);
+	font-weight: 600;
+	padding: 15px 20px;
+	font-size: 30px;
+	letter-spacing: 5px;
+	position: relative;
+}
+
+.pierwsza .logo a span {
+	font-family: 'Clicker Script', cursive;
+	font-size: 40px;
+}
+
+.pierwsza .logo a::before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-bottom: 5px solid var(--skin-color);
+	border-left: 5px solid var(--skin-color);
+	bottom: 0;
+	left: 0;
+}
+
+.pierwsza .logo a::after {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-top: 5px solid var(--skin-color);
+	border-right: 5px solid var(--skin-color);
+	top: 0;
+	right: 0;
+}
+
+.pierwsza .nav-wlacz {
+	height: 40px;
+	width: 40px;
+	border: 1px solid var(--bg-black-50);
+	cursor: pointer;
+	position: fixed;
+	left: 300px;
+	top: 20px;
+	border-radius: 5px;
+	background: var(--bg-black-100);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.pierwsza .nav-wlacz span {
+	height: 2px;
+	width: 18px;
+	background: var(--skin-color);
+	display: inline-block;
+	position: relative;
+}
+
+.pierwsza .nav-wlacz.open span {
+	background: transparent;
+}
+
+.pierwsza .nav-wlacz span::before {
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 18px;
+	background: var(--skin-color);
+	top: -6px;
+	left: 0;
+}
+
+.pierwsza .nav-wlacz.open span::before {
+	transform: rotate(45deg);
+	top: 0;
+}
+
+.pierwsza .nav-wlacz span::after {
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 18px;
+	background: var(--skin-color);
+	top: 6px;
+	left: 0;
+}
+
+.pierwsza .nav-wlacz.open span::after {
+	transform: rotate(-45deg);
+	top: 0;
+}
+
+.pierwsza .nav {
+	margin-top: 50px;
+}
+
+.pierwsza .nav li {
+	margin-bottom: 20px;
+	display: block;
+}
+
+.pierwsza .nav li a {
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+	border-bottom: 1px solid var(--bg-black-50);
+	color: var(--text-black-900);
+	padding: 5px 15px;
+}
+
+.pierwsza .nav li a.aktywny {
+	color: var(--skin-color);
+}
+
+.pierwsza .nav li a i {
+	margin-right: 15px;
+}
+
+/* Główna */
+
+.glowna-sekcja {
+	min-height: 100vh;
+	display: flex;
+	color: var(--text-black-900);
+}
+
+.glowna-sekcja .info {
+	flex: 0 0 60%;
+	max-width: 60%;
+}
+
+h3.czesc {
+	font-size: 28px;
+	margin: 15px 0;
+}
+
+h3.czesc span {
+	font-family: 'Clicker Script', cursive;
+	font-size: 35px;
+	font-weight: 700;
+	color: var(--skin-color);
+}
+
+h3.moja-profesja {
+	font-size: 30px;
+	margin: 15px 0;
+}
+
+.pisz {
+	color: var(--skin-color);
+}
+
+.info p {
+	margin-bottom: 70px;
+	font-size: 20px;
+	color: var(--text-black-700);
+}
+
+.glowna-sekcja .glowna-zdjecie {
+	flex: 0 0 40%;
+	max-width: 40%;
+	text-align: center;
+	position: relative;
+}
+.glowna-zdjecie::after {
+	content: '';
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	border-bottom: 10px solid var(--skin-color);
+	border-right: 10px solid var(--skin-color);
+	right: 40px;
+	bottom: -70px;
+}
+
+.glowna-zdjecie::before {
+	content: '';
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	border-top: 10px solid var(--skin-color);
+	border-left: 10px solid var(--skin-color);
+	left: 40px;
+	top: -70px;
+}
+
+.glowna-sekcja .glowna-zdjecie img {
+	margin: auto;
+	border-radius: 15px;
+	height: 400px;
+	box-shadow: 0px 0px 10px var(--skin-color);
+}
+
+/* O mnie sekcja */
+
+.omnie-sekcja {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.omnie-sekcja .omnie-info {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.omnie-sekcja .omnie-info .omnie-tekst {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.omnie-sekcja .omnie-info .omnie-tekst h3 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	font-weight: 700;
+	color: var(--text-black-900);
+}
+
+.omnie-sekcja .omnie-info .omnie-tekst h3 span {
+	color: var(--skin-color);
+}
+
+.omnie-sekcja .omnie-info .omnie-tekst p {
+	font-size: 16px;
+	line-height: 25px;
+	color: var(--text-black-900);
+}
+
+.omnie-sekcja .blok .personalnie {
+	flex: 0 0 60%;
+	max-width: 60%;
+	margin-top: 40px;
+}
+
+.omnie-sekcja .blok .personalnie .objekt-info {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.omnie-sekcja .blok .personalnie .objekt-info p {
+	font-weight: 600;
+	padding: 10px 0;
+	font-size: 16px;
+	color: var(--text-black-900);
+	border-bottom: 1px solid var(--bg-black-50);
+}
+
+.omnie-sekcja .blok .personalnie .objekt-info p span {
+	font-weight: 400;
+	color: var(--text-black-700);
+	margin-left: 4px;
+	display: inline-block;
+}
+
+.omnie-sekcja .blok .personalnie .przyciski {
+	margin-top: 30px;
+}
+
+.omnie-sekcja .blok .personalnie .przyciski .btn {
+	margin-top: 10px;
+}
+
+.omnie-sekcja .blok .skille {
+	flex: 0 0 40%;
+	max-width: 40%;
+	margin-top: 40px;
+}
+
+.omnie-sekcja .blok .skille .objekt-skile {
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 25px;
+}
+
+.omnie-sekcja .blok .skille .objekt-skile h5 {
+	line-height: 40px;
+	font-weight: 600;
+	font-size: 16px;
+	color: var(--text-black-900);
+	text-transform: capitalize;
+}
+
+.omnie-sekcja .blok .skille .objekt-skile .postep {
+	background-color: var(--bg-black-50);
+	height: 7px;
+	border-radius: 4px;
+	width: 100%;
+	position: relative;
+}
+
+.omnie-sekcja .blok .skille .objekt-skile .postep .progres {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 4px;
+	background: var(--skin-color);
+}
+
+.omnie-sekcja .blok .skille .objekt-skile .procent {
+	position: absolute;
+	right: 0;
+	color: var(--text-black-900);
+	top: -40px;
+	font-weight: 400;
+	line-height: 40px;
+}
+
+.omnie-sekcja .blok .edukacja,
+.omnie-sekcja .blok .doswiadczenie {
+	flex: 0 0 50%;
+	max-width: 50%;
+	margin-top: 30px;
+}
+
+.omnie-sekcja .blok h3.tytul {
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: 700;
+	color: var(--text-black-900);
+}
+
+.omnie-sekcja .blok .liniaczasu-box {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.omnie-sekcja .blok .liniaczasu {
+	background: var(--bg-black-100);
+	padding: 30px 15px;
+	border: 1px solid var(--bg-black-50);
+	border-radius: 10px;
+	width: 100%;
+	position: relative;
+}
+
+.omnie-sekcja .blok .liniaczasu .objekt-liniczasu {
+	position: relative;
+	padding-left: 37px;
+	padding-bottom: 50px;
+}
+
+.omnie-sekcja .blok .liniaczasu .objekt-liniczasu:last-child {
+	padding-bottom: 0;
+}
+
+.omnie-sekcja .blok .liniaczasu .objekt-liniczasu::before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	left: 7px;
+	top: 0;
+	background-color: var(--skin-color);
+}
+
+.omnie-sekcja .blok .liniaczasu .kropka {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: var(--skin-color);
+}
+
+.omnie-sekcja .blok .liniaczasu .liniaczasu-czas {
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 12px;
+	color: var(--text-black-700);
+}
+
+.omnie-sekcja .blok .liniaczasu .liniaczasu-czas i {
+	margin-right: 5px;
+}
+
+.omnie-sekcja .blok .liniaczasu .liniaczasu-tytul {
+	font-weight: 700;
+	font-size: 18px;
+	margin-bottom: 15px;
+	text-transform: capitalize;
+	color: var(--text-black-900);
+}
+
+.omnie-sekcja .blok .liniaczasu .liniaczasu-tekst {
+	line-height: 25px;
+	font-size: 16px;
+	text-align: justify;
+	color: var(--text-black-700);
+}
+
+/* Usługi sekcja */
+
+.uslugi-sekcja .blok {
+	padding: 40px;
+}
+
+.uslugi-sekcja .objekt-uslugi {
+	margin-bottom: 30px;
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box {
+	background: var(--bg-black-100);
+	border: 1px solid var(--bg-black-50);
+	border-radius: 10px;
+	padding: 30px 15px;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box:hover {
+	box-shadow: 0 0 20px black;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box .ikona {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 30px;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box .ikona i {
+	font-size: 40px;
+	line-height: 60px;
+	color: var(--skin-color);
+	transition: all 0.3s ease;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box:hover .ikona {
+	background: var(--skin-color);
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box:hover .ikona i {
+	font-size: 25px;
+	color: whitesmoke;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box h4 {
+	font-size: 18px;
+	margin-bottom: 15px;
+	color: var(--text-black-900);
+	font-weight: 700;
+	text-transform: capitalize;
+}
+
+.uslugi-sekcja .objekt-uslugi .objekt-uslugi-box p {
+	font-size: 16px;
+	color: var(--text-black-700);
+	line-height: 25px;
+}
+
+/* Portfolio sekcja */
+
+.portfo-sekcja .blok {
+	padding-bottom: 40px;
+}
+
+.portfo-sekcja .portfo-naglowek {
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 40px;
+}
+
+.portfo-sekcja .portfo-naglowek h2 {
+	color: var(--text-black-900);
+	font-weight: 500;
+}
+
+.portfo-sekcja .objekt-portfolio {
+	flex: 0 0 33%;
+	max-width: 33%;
+	margin-bottom: 30px;
+}
+
+.portfo-sekcja .objekt-portfolio-box {
+	border: 6px solid var(--bg-black-100);
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.portfo-sekcja .objekt-portfolio-box .portfolio-zdjecia img {
+	width: 100%;
+	display: block;
+	height: 270px;
+}
+
+/* Kontakt sekcja */
+
+.kontakt-tytul {
+	color: var(--skin-color);
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.kontakt-podtytul {
+	color: var(--text-black-900);
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 60px;
+}
+
+.kontakt-sekcja .objekt-kontakt {
+	flex: 0 0 30%;
+	max-width: 50%;
+	text-align: center;
+	margin-bottom: 60px; 
+}
+
+.kontakt-sekcja .objekt-kontakt .ikona {
+	display: inline-block;
+}
+
+.kontakt-sekcja .objekt-kontakt .ikona i {
+	font-size: 25px;
+	color: var(--skin-color);
+}
+
+.kontakt-sekcja .objekt-kontakt h4 {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--text-black-900);
+	text-transform: capitalize;
+	margin: 15px 0 5px;
+}
+
+.kontakt-sekcja .objekt-kontakt p {
+	font-size: 16px;
+	line-height: 25px;
+	color: var(--text-black-700);
+	font-weight: 400;
+}
+
+.kontakt-sekcja .kontakt-form {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.kontakt-sekcja .kontakt-form .col-6 {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.kontakt-sekcja .kontakt-form .col-12 {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.kontakt-sekcja .kontakt-form .objekt-formularz {
+	margin-bottom: 30px;
+}
+
+.kontakt-sekcja .kontakt-form .objekt-formularz .kontrola-formularza {
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	background: var(--bg-black-100);
+	border: 1px solid var(--bg-black-50);
+	padding: 10px 25px;
+	font-size: 16px;
+	color: var(--text-black-700);
+	transition: all 0.3s ease;
+}
+
+.kontakt-sekcja .kontakt-form .objekt-formularz .kontrola-formularza:focus {
+	box-shadow: 0 0 20px black;
+}
+
+.kontakt-sekcja .kontakt-form .objekt-formularz textarea.kontrola-formularza {
+	height: 140px;
+}
+
+.kontakt-sekcja .kontakt-form .btn {
+	height: 50px;
+	padding: 0 50px;
+	cursor: pointer;
+}
+
+@media (max-width: 1600px) {
+
+	.glowny-blok {
+		padding-left: 270px;
+	}
+
+	.omnie-sekcja .omnie-info .personalnie .objekt-info p span {
+		display: block;
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 1199px) {
+	
+	section .blok {
+		padding-top: 70px;
+	}
+
+	.pierwsza {
+		left: -270px;
+	}
+
+	.pierwsza.open {
+		left: 0;
+	}
+
+	.pierwsza .nav-wlacz {
+		display: flex;
+		left: 30px;
+	}
+
+	.pierwsza .nav-wlacz.open {
+		left: 300px;
+	}
+
+	section {
+		left: 0;
+	}
+
+	section.open {
+		left: 270px;
+	}
+
+	.omnie-sekcja .omnie-info .personalnie .objekt-info p span {
+		display: block;
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 991px) {
+
+	.glowna-sekcja .info {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.glowna-sekcja .glowna-zdjecie {
+		display: none;
+	}
+
+	.omnie-sekcja .personalnie .tekst .objekt-info {
+	 flex: 0 0 100%;
+	 max-width: 90%;
+	 padding: 0;
+	}
+
+	.omnie-sekcja .personalnie .tekst .objekt-info p span {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 0;
+		font-size: 13px;
+	}
+
+	.omnie-sekcja .personalnie .tekst .przyciski a {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 7px;
+		font-size: 15px;
+	}
+
+	.omnie-sekcja .tekst .edukacja {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 10px;
+		font-size: 5px;
+		text-align: center;
+	}
+
+	.omnie-sekcja .tekst .doswiadczenie{
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 10px;
+		font-size: 5px;
+		text-align: center;
+	}
+
+	.omnie-sekcja .skille .tekst .objekt-skile {
+		padding: 8px;
+		padding-top: 20px;
+		flex: 0 0 100%;
+		max-width: 100%;
+		text-align: left;
+		font-size: 12px;
+	}
+
+	.omnie-sekcja .skille .tekst .objekt-skile h5 {
+		padding: 8px;
+		flex: 0 0 50%;
+		max-width: 100%;
+		text-align: left;
+		font-size: 12px;
+	}
+
+	.uslugi-sekcja .blok {
+		padding-left: 0;
+	}
+
+	.uslugi-sekcja .tekst .objekt-uslugi {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding-left: 45px;
+	}
+
+	.portfo-sekcja .tekst .portfo-naglowek h2 {
+		text-align: center;
+		margin-bottom: -50px;
+	}
+
+	.portfo-sekcja .tekst .objekt-portfolio {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 25px;
+	}
+
+	.kontakt-sekcja .tekst .objekt-kontakt {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 0;
+	}
+
+	.kontakt-sekcja .tekst .objekt-formularz .btn {
+		font-size: 13px;
+		padding: 2px;
+	}
+}

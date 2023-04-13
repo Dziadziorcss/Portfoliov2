@@ -1,0 +1,80 @@
+.zmieniacz {
+    position: fixed;
+    right: 0;
+    top: 60px;
+    padding: 15px;
+    width: 200px;
+    border: 1px solid var(--bg-black-50);
+    background: var(--bg-black-100);
+    z-index: 99;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    cursor: pointer;
+}
+
+.zmieniacz.open {
+    transform: translateX(-25px);
+}
+
+.zmieniacz .ikona-z {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    right: 100%;
+    border: 1px solid var(--bg-black-50);
+    margin-right: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.zmieniacz .ikona-z i {
+    line-height: 40px;
+}
+
+.zmieniacz .zmieniacz-przycisk{
+    top: 0;
+}
+
+.zmieniacz .light-dark {
+    top: 55px;
+}
+
+.zmieniacz h4 {
+    margin: 0 0 10px;
+    color: var(--text-black-700);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.zmieniacz .kolory-web {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.zmieniacz .kolory-web span {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.zmieniacz .kolor-1 {
+    background: rgb(117, 6, 28);
+}
+.zmieniacz .kolor-2 {
+    background: rgb(13, 158, 13);
+}
+.zmieniacz .kolor-3 {
+    background: rgb(68, 38, 240);
+}
+.zmieniacz .kolor-4 {
+    background: rgb(180, 94, 13);
+}
